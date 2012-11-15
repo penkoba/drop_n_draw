@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+<meta charset="utf-8" />
+<title>drop'n'draw</title>
+<style type="text/css">
+  canvas {
+    border:1px solid black;
+  }
+</style>
+<script src="drop_n_draw.js" charset="utf-8"></script>
+</head>
+
+<body>
+<input id="read-button" type="file" />
+<hr />
+<canvas id="drawarea" width="800" height="600"></canvas><br />
+
+<script>
+var dnd = new DropAndDraw(document.getElementById("drawarea"));
+
+window.onload = function() {
+  // handler for file button
+  var button = document.getElementById("read-button");
+  button.addEventListener("change", onRead, false);
+};
+
+// read button handler
+var onRead = function(e) {
+  var file = e.target.files[0];
+  dnd.readFile(file);
+};
+</script>
+
+</body>
+
+</html>
