@@ -187,7 +187,7 @@ var DropAndDraw = function(canvas) {
     // construct new data object
     // if the whole data is an object, take is as a data_set which contains
     // label[], color[](opt), and data[].
-    // otherwise, take it as an data array.
+    // otherwise, take it as a data array.
     if (typeof obj[0] == 'object') {
       nr_items = obj[0].label.length + 1;
       data_set = obj[0];
@@ -212,7 +212,7 @@ var DropAndDraw = function(canvas) {
         "y": series[i + 1]
       };
 
-      // if the label is not spefified, use the file name
+      // if the label is not specified, use the file name
       if (typeof data_set.label != 'undefined')
         dobj.label = data_set.label[i];
       else if (nr_items == 2)
@@ -220,7 +220,7 @@ var DropAndDraw = function(canvas) {
       else
         dobj.label = filename + '-' + (i + 1);
 
-      // if the color is not spefified, assign arbitrary
+      // if the color is not specified, assign arbitrary
       if (typeof data_set.color != 'undefined')
         dobj.color = data_set.color[i];
       else
