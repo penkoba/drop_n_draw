@@ -19,9 +19,10 @@
 <canvas id="drawarea" width="800" height="600"></canvas><br />
 
 <script>
-var dnd = new DropAndDraw(document.getElementById("drawarea"));
+var dnd;
 
 window.onload = function() {
+  dnd = new DropAndDraw(document.getElementById("drawarea"));
   // handler for file button
   var button = document.getElementById("read-button");
   button.addEventListener("change", onRead, false);
