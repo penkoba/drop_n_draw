@@ -1,5 +1,7 @@
 // constructor
 var DropAndDraw = function(canvas) {
+  var dnd = this;
+
   // init canvas
   this.initCanvas = function() {
     this.ctx.fillStyle = this.graph_margin_color;
@@ -237,7 +239,6 @@ var DropAndDraw = function(canvas) {
   // read file
   this.readFile = function(file) {
     var reader = new FileReader();
-    var dnd = this;
     reader.onload = function(e) {
       dnd.parseData(file.name, e.target.result);
       dnd.draw();
@@ -249,7 +250,7 @@ var DropAndDraw = function(canvas) {
   this.onDropFile = function(e) {
     e.preventDefault();
     var file = e.dataTransfer.files[0];
-    this.readFile(file);
+    dnd.readFile(file);
   };
 
   // dragover handler
